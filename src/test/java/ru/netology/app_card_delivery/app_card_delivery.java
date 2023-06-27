@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class app_card_delivery {
@@ -13,7 +12,7 @@ public class app_card_delivery {
     public void CardTest() {
         open("http://localhost:9999");
         $("span[data-test-id='city'] input").setValue("Казань");
-        $("span[data-test-id='date'] input").setValue("2023_06_30");
+        $("span[data-test-id='date'] input").setValue("2023_06_31");
         $("span[data-test-id='name'] input").setValue("Ким-Чан Ин");
         $("span[data-test-id='phone'] input").setValue("+79000000000");
         $("label[data-test-id='agreement']").click();
