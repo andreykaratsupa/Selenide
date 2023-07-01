@@ -42,4 +42,4 @@ out/
 ### Exclusions ###
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
-!**/src/test/**
+!**/src/test/**.DS_Store
