@@ -1,4 +1,4 @@
-package ru.netology.appCardDelivery;
+package ru.netology.appcarddelivery;
 
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class AppCardDelivery {
+public class appcarddelivery {
     private String planningDate;
 
     public String generateDate(int days) {
@@ -21,10 +21,11 @@ public class AppCardDelivery {
     @Test
     public void cardTest() {
         planningDate = generateDate(3);
-        System.out.println("Planning date: " + planningDate);
 
         open("http://localhost:9999");
         $("span[data-test-id='city'] input").setValue("Казань");
+        $("[data-test-id='date'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
+        $("[data-test-id='date'] input").setValue(planningDate);
         $("span[data-test-id='name'] input").setValue("Ким-Чан Ин");
         $("span[data-test-id='phone'] input").setValue("+79000000000");
         $("label[data-test-id='agreement']").click();
